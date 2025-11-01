@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Change Starts Today</title>
+  <meta name="description" content="Change Starts Today, or CST, Forever Changing Today for a Better Tomorrow">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+
+
+<body>
+
+     <h1 class="animate-text">Change Starts Today</h1>
+
+  <style>
+    body {
+      background-color: #efebe8;
+      color: #007b8a;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .animate-text {
+      font-size: 3rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      opacity: 0;
+      transform: translateY(100px); /* start below */
+      animation: glowSlideUp 1.5s ease-out forwards;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+
+    @keyframes glowSlideUp {
+      0% {
+        opacity: 0;
+        transform: translateY(100px);
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+        text-shadow: 0 0 25px #ffffff, 0 0 50px #ffffff;
+      }
+    }
+  </style>
+
+
+</body>
+</html>
