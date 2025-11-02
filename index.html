@@ -4,30 +4,33 @@
 
 
 <head>
+  <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Change Starts Today</title>
   <meta name="description" content="Change Starts Today, or CST, Forever Changing Today for a Better Tomorrow">
-  <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
-</head>
-
-
-
-<body>
-
-     <h1 class="animate-text">Change Starts Today</h1>
-
   <style>
+    /* General body setup */
     body {
-      background-color: #efebe8;
-      color: #007b8a;
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    /* Each section fills the whole screen */
+    section {
+      height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
+      flex-direction: column;
+    }
+
+    /* Page 1 styles */
+    .page1 {
+      background-color: #efebe8;
+      color: #007b8a;
     }
 
     .animate-text {
@@ -35,7 +38,7 @@
       letter-spacing: 2px;
       text-transform: uppercase;
       opacity: 0;
-      transform: translateY(100px); /* start below */
+      transform: translateY(100px);
       animation: glowSlideUp 1.5s ease-out forwards;
       text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
     }
@@ -52,17 +55,60 @@
         text-shadow: 0 0 25px #ffffff, 0 0 50px #ffffff;
       }
     }
+
+    /* Page 2 styles */
+    .page2 {
+      background-color: #007b8a;
+      color: #efebe8;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+    }
+
+    .page2.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h1 {
+      font-size: 3rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    p {
+      font-size: 1.5rem;
+      max-width: 600px;
+      text-align: center;
+    }
   </style>
+</head>
+
+<body>
+  <!-- Page 1 -->
+  <section class="page1">
+    <h1 class="animate-text">Change Starts Today</h1>
+  </section>
+
+  <!-- Page 2 -->
+  <section class="page2" id="page2">
+    <h1>Welcome to Page Two</h1>
+    <p>This section fades in beautifully as you scroll down. You can add content, images, or buttons here!</p>
+  </section>
+
+  <script>
+    // Fade in page 2 when it comes into view
+    const page2 = document.querySelector('.page2');
+    window.addEventListener('scroll', () => {
+      const page2Top = page2.getBoundingClientRect().top;
+      const triggerPoint = window.innerHeight * 0.8;
+
+      if (page2Top < triggerPoint) {
+        page2.classList.add('visible');
+      }
+    });
+  </script>
 
 
 </body>
-
 </html>
-
-
-
-
-
-
-
-
