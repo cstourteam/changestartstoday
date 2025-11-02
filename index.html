@@ -31,6 +31,7 @@
     .page1 {
       background-color: #efebe8;
       color: #007b8a;
+      text-align: center;
     }
 
     .animate-text {
@@ -43,6 +44,17 @@
       text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
     }
 
+    .subheading {
+      font-size: 1.3rem;
+      opacity: 0;
+      transform: translateY(50px);
+      animation: fadeUp 2s ease-out forwards;
+      animation-delay: 1s;
+      color: #0099a8;
+      margin-top: 15px;
+      letter-spacing: 1px;
+    }
+
     @keyframes glowSlideUp {
       0% {
         opacity: 0;
@@ -53,6 +65,17 @@
         opacity: 1;
         transform: translateY(0);
         text-shadow: 0 0 25px #ffffff, 0 0 50px #ffffff;
+      }
+    }
+
+    @keyframes fadeUp {
+      0% {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
       }
     }
 
@@ -71,7 +94,6 @@
     }
 
     h1 {
-      font-size: 3rem;
       text-transform: uppercase;
       letter-spacing: 2px;
     }
@@ -85,9 +107,10 @@
 </head>
 
 <body>
-  <!-- Page 1 -->
+   <!-- Page 1 -->
   <section class="page1">
     <h1 class="animate-text">Change Starts Today</h1>
+    <h2 class="subheading">Forever Changing Today for a Better Tomorrow</h2>
   </section>
 
   <!-- Page 2 -->
