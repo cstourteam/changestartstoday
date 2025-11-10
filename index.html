@@ -103,6 +103,85 @@
       max-width: 600px;
       text-align: center;
     }
+
+.donate-btn {
+  margin: 35px 0;
+  padding: 18px 45px;           /* Bigger padding for size */
+  background-color: #efebe8;
+  color: #007b8a;
+  border: none;
+  border-radius: 50px;          /* More rounded edges */
+  font-size: 1.4rem;            /* Larger text */
+  font-weight: 700;             /* Bolder font */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);  /* subtle shadow */
+}
+  </style>
+</head>
+
+<body>
+   <!-- Page 1 -->
+  <section class="page1">
+    <h1 class="animate-text">Change Starts Today</h1>
+    <h2 class="subheading">Forever Changing Today for a Better Tomorrow</h2>
+  </section>
+
+  <!-- Page 2 -->
+  <section class="page2" id="page2">
+    <h1>Get Involved</h1>
+    <button class="donate-btn" onclick="document.querySelector('#page3').scrollIntoView({ behavior: 'smooth' });">Donate</button>
+    
+    <h2>CURRENT EVENTS</h2>
+    <div class="events">
+      <div class="event-box">
+        <h3>Community Drive</h3>
+        <p>Join us this month to provide essentials to families in need.</p>
+      </div>
+      <div class="event-box">
+        <h3>Support Meetup</h3>
+        <p>Connect with families and share stories of growth and support.</p>
+      </div>
+      <div class="event-box">
+        <h3>School Supply Fund</h3>
+        <p>Help us raise funds for children’s educational resources.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Page 3 -->
+  <section class="page3" id="page3">
+    <h1>Donate Today</h1>
+    <p>Your contribution helps us support children and families emotionally and financially. Every donation creates real impact.</p>
+    <!-- You can later link this to a real donation form or platform -->
+  </section>
+
+  <!-- Page 4 -->
+  <section class="page4" id="page4">
+    <h1>Our Mission</h1>
+    <p>Our mission is to create a support system for children and their families. 
+      We aspire to help emotionally and financially through building a community, 
+      ridding isolation, and encouraging interactivity.</p>
+  </section>
+
+  <script>
+    // Fade-in animation for sections as they appear
+    const sections = document.querySelectorAll('.page2, .page3, .page4');
+    window.addEventListener('scroll', () => {
+      sections.forEach(section => {
+        const top = section.getBoundingClientRect().top;
+        const trigger = window.innerHeight * 0.8;
+        if (top < trigger) section.classList.add('visible');
+      });
+    });
+  </script>
+
+
+</body>
+</html>
+      max-width: 600px;
+      text-align: center;
+    }
   </style>
 </head>
 
@@ -134,4 +213,5 @@
 
 
 </body>
+
 </html>
