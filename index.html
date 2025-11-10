@@ -179,39 +179,3 @@
 
 </body>
 </html>
-      max-width: 600px;
-      text-align: center;
-    }
-  </style>
-</head>
-
-<body>
-   <!-- Page 1 -->
-  <section class="page1">
-    <h1 class="animate-text">Change Starts Today</h1>
-    <h2 class="subheading">Forever Changing Today for a Better Tomorrow</h2>
-  </section>
-
-  <!-- Page 2 -->
-  <section class="page2" id="page2">
-    <h1>Welcome to Page Two</h1>
-    <p>This section fades in beautifully as you scroll down. You can add content, images, or buttons here!</p>
-  </section>
-
-  <script>
-    // Fade in page 2 when it comes into view
-    const page2 = document.querySelector('.page2');
-    window.addEventListener('scroll', () => {
-      const page2Top = page2.getBoundingClientRect().top;
-      const triggerPoint = window.innerHeight * 0.8;
-
-      if (page2Top < triggerPoint) {
-        page2.classList.add('visible');
-      }
-    });
-  </script>
-
-
-</body>
-
-</html>
