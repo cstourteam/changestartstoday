@@ -1,93 +1,139 @@
 <!DOCTYPE html>
-<html>
-
-
+<html lang="en">
 
 <head>
-  <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Change Starts Today</title>
-  <meta name="description" content="Change Starts Today, or CST, Forever Changing Today for a Better Tomorrow">
+  <meta name="description" content="Change Starts Today, Forever Changing Today for a Better Tomorrow">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
+
   <style>
-    /* General body setup */
+    /* ===== GLOBAL ===== */
     body {
       margin: 0;
       font-family: 'Cinzel Decorative', serif;
-font-height: 90;
-font-weight: 700;
+      font-weight: 700;
       scroll-behavior: smooth;
     }
 
-    /* Each section fills the whole screen */
     section {
       height: 100vh;
+      padding-top: 70px;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      flex-direction: column;
+      text-align: center;
     }
 
-    /* Page 1 styles */
-    .page1 {
-      background-color: #efebe8;
+    h1 {
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    p {
+      font-size: 1.3rem;
+      max-width: 650px;
+    }
+
+    /* ===== MENU BAR ===== */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 70px;
+      background: rgba(239, 235, 232, 0.95);
+      backdrop-filter: blur(8px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 40px;
+      z-index: 1000;
+    }
+
+    .logo {
       color: #007b8a;
-      text-align: center;
+      font-size: 1.3rem;
+      letter-spacing: 2px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #007b8a;
+      letter-spacing: 1px;
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: #007b8a;
+      left: 0;
+      bottom: -6px;
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* ===== PAGE 1 ===== */
+    .page1 {
+      background: #efebe8;
+      color: #007b8a;
     }
 
     .animate-text {
       font-size: 3rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
       opacity: 0;
       transform: translateY(100px);
       animation: glowSlideUp 1.5s ease-out forwards;
-      text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+      text-shadow: 0 0 10px rgba(255,255,255,0.5);
     }
 
     .subheading {
+      margin-top: 15px;
       font-size: 1.3rem;
+      color: #0099a8;
       opacity: 0;
       transform: translateY(50px);
       animation: fadeUp 2s ease-out forwards;
       animation-delay: 1s;
-      color: #0099a8;
-      margin-top: 15px;
-      letter-spacing: 1px;
     }
 
     @keyframes glowSlideUp {
-      0% {
-        opacity: 0;
-        transform: translateY(100px);
-        text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-      }
-      100% {
+      to {
         opacity: 1;
         transform: translateY(0);
-        text-shadow: 0 0 25px #ffffff, 0 0 50px #ffffff;
+        text-shadow: 0 0 25px white, 0 0 50px white;
       }
     }
 
     @keyframes fadeUp {
-      0% {
-        opacity: 0;
-        transform: translateY(50px);
-      }
-      100% {
+      to {
         opacity: 1;
         transform: translateY(0);
       }
     }
 
-    /* Page 2 styles */
+    /* ===== PAGE 2 ===== */
     .page2 {
-      background-color: #007b8a;
+      background: #007b8a;
       color: #efebe8;
       opacity: 0;
       transform: translateY(50px);
-      transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+      transition: 1.5s;
     }
 
     .page2.visible {
@@ -95,127 +141,154 @@ font-weight: 700;
       transform: translateY(0);
     }
 
-    h1 {
-      text-transform: uppercase;
-      letter-spacing: 2px;
+    /* ===== STAR BUTTON ===== */
+    .star-button {
+      background: #ffffa2;
+      width: 200px;
+      height: 200px;
+      clip-path: polygon(
+        50% 5%, 63% 35%, 98% 38%,
+        70% 60%, 80% 92%, 50% 75%,
+        20% 92%, 30% 60%, 2% 38%, 37% 35%
+      );
+      border: none;
+      cursor: pointer;
+      margin: 25px 0;
+      font-size: 1.1rem;
+      transition: 0.3s;
+      box-shadow: 0 0 30px rgba(255,221,87,0.4);
     }
 
-    p {
-      font-size: 1.5rem;
-      max-width: 600px;
-      text-align: center;
+    .star-button:hover {
+      transform: scale(1.15);
+      box-shadow: 0 0 50px rgba(255,221,87,0.7);
     }
 
-.star-button {
-  position: relative;
-  background: #ffffa2;
-  width: 200px;   /* larger, more presence */
-  height: 200px;
-  clip-path: polygon(
-    50% 5%, 63% 35%, 98% 38%, 
-    70% 60%, 80% 92%, 50% 75%, 
-    20% 92%, 30% 60%, 2% 38%, 37% 35%
-  );
-  border: none;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.4s ease;
-  box-shadow: 0 0 30px rgba(255, 221, 87, 0.4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 1.1rem;
-  color: #1c1d09;
-  border-radius: 200px; /* visually softens the points */
-  filter: drop-shadow(0 5px 15px rgba(255, 200, 0, 0.4));
-}
+    /* ===== EVENTS ===== */
+    .events {
+      display: flex;
+      gap: 25px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
 
-.star-button:hover {
-  transform: scale(1.15);
-  box-shadow: 0 0 50px rgba(255, 221, 87, 0.7);
-  filter: drop-shadow(0 0 25px rgba(255, 230, 100, 0.8));
-}
+    .event-box {
+      background: rgba(255,255,255,0.15);
+      padding: 20px;
+      width: 250px;
+      border-radius: 10px;
+    }
 
-</style>
+    /* ===== PAGE 3–5 FADE ===== */
+    .page3, .page4, .page5 {
+      background: #efebe8;
+      color: #007b8a;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: 1.5s;
+    }
+
+    .page3.visible,
+    .page4.visible,
+    .page5.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== GALLERY ===== */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      width: 80%;
+      margin-top: 30px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+    }
+  </style>
 </head>
 
 <body>
-   <!-- Page 1 -->
-  <section class="page1">
+
+  <!-- MENU -->
+  <nav>
+    <div class="logo">CST</div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#page2">Get Involved</a></li>
+      <li><a href="#page3">Donate</a></li>
+      <li><a href="#page4">Mission</a></li>
+      <li><a href="#page5">Our Stars</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE 1 -->
+  <section class="page1" id="home">
     <h1 class="animate-text">Change Starts Today</h1>
     <h2 class="subheading">FOREVER CHANGING TODAY FOR A BETTER TOMORROW</h2>
   </section>
 
-  <!-- Page 2 -->
+  <!-- PAGE 2 -->
   <section class="page2" id="page2">
     <h1>Get Involved</h1>
-   <button class="star-button" onclick="location.href='#page3'">DONATE</button>
-    
-    <h2>CURRENT EVENTS</h2>
+    <button class="star-button" onclick="location.href='#page3'">DONATE</button>
+
+    <h2>Current Events</h2>
     <div class="events">
       <div class="event-box">
         <h3>Community Drive</h3>
-        <p>Join us this month to provide essentials to families in need.</p>
+        <p>Provide essentials to families in need.</p>
       </div>
       <div class="event-box">
         <h3>Support Meetup</h3>
-        <p>Connect with families and share stories of growth and support.</p>
+        <p>Connect and grow together.</p>
       </div>
       <div class="event-box">
         <h3>School Supply Fund</h3>
-        <p>Help us raise funds for children’s educational resources.</p>
+        <p>Support education resources.</p>
       </div>
     </div>
   </section>
 
-  <!-- Page 3 -->
+  <!-- PAGE 3 -->
   <section class="page3" id="page3">
     <h1>Donate Today</h1>
-    <p>Your contribution helps us support children and families emotionally and financially. Every donation creates real impact.</p>
-    <!-- You can later link this to a real donation form or platform -->
+    <p>Your support creates real impact for children and families.</p>
   </section>
 
-  <!-- Page 4 -->
+  <!-- PAGE 4 -->
   <section class="page4" id="page4">
     <h1>Our Mission</h1>
-    <p>Our mission is to create a support system for children and their families. 
-      We aspire to help emotionally and financially through building a community, 
-      ridding isolation, and encouraging interactivity.</p>
+    <p>We build community, reduce isolation, and encourage interactivity to support families emotionally and financially.</p>
   </section>
 
-  <script>
-    // Fade-in animation for sections as they appear
-    const sections = document.querySelectorAll('.page2, .page3, .page4');
-    window.addEventListener('scroll', () => {
-      sections.forEach(section => {
-        const top = section.getBoundingClientRect().top;
-        const trigger = window.innerHeight * 0.8;
-        if (top < trigger) section.classList.add('visible');
-      });
-    });
-  </script>
-  <!-- Page 5 -->
+  <!-- PAGE 5 -->
   <section class="page5" id="page5">
-    <h1>OUR STARS</h1>
-    <h3>ALL THE LOVELY PEOPLE WE'VE HELPED<h3>
+    <h1>Our Stars</h1>
+    <h3>All the lovely people we've helped</h3>
+
     <div class="gallery">
-      <img src="https://source.unsplash.com/400x300/?community" alt="NAME">
-      <img src="https://source.unsplash.com/400x300/?children" alt="NAME">
-      <img src="https://source.unsplash.com/400x300/?charity" alt="NAME">
-      <img src="https://source.unsplash.com/400x300/?volunteer" alt="NAME">
-      <img src="https://source.unsplash.com/400x300/?support" alt="NAME">
-      <img src="https://source.unsplash.com/400x300/?education" alt="NAME">
+      <img src="https://source.unsplash.com/400x300/?community" alt="">
+      <img src="https://source.unsplash.com/400x300/?children" alt="">
+      <img src="https://source.unsplash.com/400x300/?charity" alt="">
+      <img src="https://source.unsplash.com/400x300/?volunteer" alt="">
+      <img src="https://source.unsplash.com/400x300/?support" alt="">
+      <img src="https://source.unsplash.com/400x300/?education" alt="">
     </div>
   </section>
 
   <script>
-    // Fade-in animation for sections as they appear
     const sections = document.querySelectorAll('.page2, .page3, .page4, .page5');
+
     window.addEventListener('scroll', () => {
       sections.forEach(section => {
-        const top = section.getBoundingClientRect().top;
-        const trigger = window.innerHeight * 0.8;
-        if (top < trigger) section.classList.add('visible');
+        if (section.getBoundingClientRect().top < window.innerHeight * 0.8) {
+          section.classList.add('visible');
+        }
       });
     });
   </script>
