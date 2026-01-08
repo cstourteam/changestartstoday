@@ -43,17 +43,17 @@
       top: 0;
       width: 100%;
       height: 70px;
-      background: rgba(239, 235, 232, 0.95);
-      backdrop-filter: blur(8px);
+      background: #ffffa2; /* UPDATED */
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 0 40px;
       z-index: 1000;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     }
 
     .logo {
-      color: #007b8a;
+      color: #1c1d09;
       font-size: 1.3rem;
       letter-spacing: 2px;
     }
@@ -68,7 +68,7 @@
 
     nav a {
       text-decoration: none;
-      color: #007b8a;
+      color: #1c1d09;
       letter-spacing: 1px;
       position: relative;
     }
@@ -78,7 +78,7 @@
       position: absolute;
       width: 0;
       height: 2px;
-      background: #007b8a;
+      background: #1c1d09;
       left: 0;
       bottom: -6px;
       transition: width 0.3s ease;
@@ -92,6 +92,10 @@
     .page1 {
       background: #efebe8;
       color: #007b8a;
+    }
+
+    .page1-content {
+      transform: translateY(-40px); /* MOVES TEXT UP */
     }
 
     .animate-text {
@@ -155,6 +159,8 @@
       cursor: pointer;
       margin: 25px 0;
       font-size: 1.1rem;
+      font-weight: 700;
+      color: #1c1d09;
       transition: 0.3s;
       box-shadow: 0 0 30px rgba(255,221,87,0.4);
     }
@@ -180,7 +186,7 @@
       border-radius: 10px;
     }
 
-    /* ===== PAGE 3–5 FADE ===== */
+    /* ===== PAGE 3–5 ===== */
     .page3, .page4, .page5 {
       background: #efebe8;
       color: #007b8a;
@@ -228,8 +234,10 @@
 
   <!-- PAGE 1 -->
   <section class="page1" id="home">
-    <h1 class="animate-text">Change Starts Today</h1>
-    <h2 class="subheading">FOREVER CHANGING TODAY FOR A BETTER TOMORROW</h2>
+    <div class="page1-content">
+      <h1 class="animate-text">Change Starts Today</h1>
+      <h2 class="subheading">FOREVER CHANGING TODAY FOR A BETTER TOMORROW</h2>
+    </div>
   </section>
 
   <!-- PAGE 2 -->
@@ -263,7 +271,10 @@
   <!-- PAGE 4 -->
   <section class="page4" id="page4">
     <h1>Our Mission</h1>
-    <p>We build community, reduce isolation, and encourage interactivity to support families emotionally and financially.</p>
+    <p>
+      We build community, reduce isolation, and encourage interactivity to support
+      families emotionally and financially.
+    </p>
   </section>
 
   <!-- PAGE 5 -->
@@ -295,3 +306,5 @@
 
 </body>
 </html>
+
+
