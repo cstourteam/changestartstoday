@@ -17,12 +17,17 @@ section {
 }
 
 body{
-   
+
 .lexend-<uniquifier> {
   font-family: "Lexend", sans-serif;
   font-optical-sizing: auto;
   font-weight: <weight>;
   font-style: normal;
+}   
+  background:#f7fbff;
+  color: #000000;
+  overflow-x:hidden;
+
 
 }
 .lexend-<uniquifier> {
