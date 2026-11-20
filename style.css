@@ -301,7 +301,7 @@ nav ul li{
 
     color:var(--blue);
 
-    font-family:'Italianno',cursive;
+    font-family:'Lexend',cursive;
 
     font-size:90px;
 
@@ -419,7 +419,7 @@ nav ul li{
 }
 
 .instagram-heading span{
-    font-family:"Italianno", cursive;
+    font-family:"Lexend", cursive;
     color:#60cffd;
     font-size:85px;
 }
@@ -552,7 +552,7 @@ nav ul li{
 
 .issue-heading span{
 
-    font-family:"Italianno", cursive;
+    font-family:"Lexend", cursive;
     color: var(--blue);
     font-size:80px;
 
@@ -695,7 +695,7 @@ font-size: 18px;
     color: var(--blue);
 
     font-size:88px;
-    font-family:"Italianno", serif;
+    font-family:"Lexend", serif;
 
 }
 
@@ -780,7 +780,7 @@ font-size: 18px;
 
 .about span{
 
-    font-family:'Italianno',cursive;
+    font-family:'Lexend',cursive;
 
     color:var(--blue);
 
@@ -837,7 +837,7 @@ font-size: 18px;
 
     color:var(--blue);
 
-    font-family:'Italianno',cursive;
+    font-family:'Lexend',cursive;
 
     font-size:78px;
 
@@ -999,7 +999,7 @@ section{
 
     color:var(--blue);
 
-    font-family:'Italianno',cursive;
+    font-family:'Lexend',cursive;
 
     font-size:77px;
 
@@ -1755,7 +1755,7 @@ color:#24374e;
 }
 
 .gallery-title h2 span{
-    font-family: "Italianno", serif;
+    font-family: "Lexend", serif;
     font-style: italic;
     color:#60cffd;
 }
@@ -1848,10 +1848,10 @@ color:#24374e;
 }
 
 .socials h3 span{
-    font-family: "Italianno", cursive;
-    font-size: 52px;   /* Italianno looks best when larger */
+    font-family: "Lexend", cursive;
+    font-size: 52px;   /* Lexend looks best when larger */
     color: #60cffd;
-    font-style: normal; /* Optional: Italianno is already italic */
+    font-style: normal; /* Optional: Lexend is already italic */
 }
 
 .socials p{
@@ -1922,7 +1922,7 @@ color: var(--dark);
 .donate h2 span{
     font-style:italic;
     color: var(--blue);
-    font-family:"Italianno", serif;
+    font-family:"Lexend", serif;
 }
 
 .donate p{
